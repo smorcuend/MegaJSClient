@@ -1,33 +1,29 @@
 <!DOCTYPE html>
 <html>
+<head>
+	<meta charset="UTF-8">
+	<title>MEGA Desktop Client</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/megaDep.js"></script>
 
-	<head>
-		<meta charset="UTF-8" >
-		<title>MEGA Desktop Client</title>
-		<script type="text/javascript" src="js/megaDep.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-	</head>
+</head>
 
-	<body>
+<body>
 
-		<div id="mainContainer">
+	<!-- User Authentication -->
+	<div style="position:absolute;top:25%;left:30%;">
+		<div id="hideClear"></div>
+		<div id="cfPrompt">
+			<div id="cftitleBar"></div>
+			<div id="promptBody"></div>
+		</div>
+	</div>
 
+	<div id="mainContainer">
 
+		<h1 id="mainTitle">MEGA Desktop Client</h1>
 
-			<header>
-				<span id="mainTitle">MEGA Desktop Client</span>
-			</header>
-
-			<div id="mainTools">
-				<span id="toolOff">
-					Upload File: <input type="file" id="fileselect1" style="height:29px; width:90px; cursor:hand;" size="42" multiple=""> <span style="position:absolute;right:90px;"><button onclick="backToRoot()">Go to Root Folder</button></span>
-					<br>
-					Create New Folder:
-					<input type="text" id="newFolderName">
-					<button onclick="makeFolderUI()">Add Folder</button>
-				</span>
-			</div>
-			
+		<div id="droparea">
 			<table id="fileTable">
 				<tr>
 					<th>Filename:</th>
@@ -36,30 +32,29 @@
 					<th>Delete:</th>
 				</tr>
 			</table>
+			<!-- <p>Drop Area</p> -->
 		</div>
 
-		<footer>
-			<span id="mainCredit">Mega API Demo by Carter Feldman</span>
-		</footer>
-
-		<!-- User Authentication -->
-		<div style="position:absolute;padding:0;margin:0;display:block;width:100%;height:100%">
-			<div id="hideClear"></div>
-			<div id="cfPrompt">
-				<div id="cftitleBar"></div>
-				<div id="promptBody"></div>
-			</div>
+		<div id="mainTools">
+			<span id="toolOff">
+				Upload File: <input type="file" id="fileselect1" multiple=""> <span><button onclick="backToRoot()">Go to Root Folder</button></span>
+				<br>
+				Create New Folder:
+				<input type="text" id="newFolderName">
+				<button onclick="makeFolderUI()">Add Folder</button>
+			</span>
 		</div>
-		<a href="" download="filename" id="dllink" style="display:none;"></a>
+	</div>
+
+	<footer>
+		<span id="mainCredit">Mega API Demo by Carter Feldman</span>
+	</footer>
 
 
 
-		<script type="text/javascript" src="js/cAPI.js"></script>
-		<script type="text/javascript" src="js/auth.js"></script>
+	<a href="" download="filename" id="dllink" style="display:none;"></a>
 
-	</body>
-
-
-
-
+	<script type="text/javascript" src="js/cAPI.js"></script>
+	<script type="text/javascript" src="js/auth.js"></script>
+</body>
 </html>
